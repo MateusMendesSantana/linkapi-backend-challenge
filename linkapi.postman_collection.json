@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "917ab978-ae33-42b0-b70b-bf2554a8bef7",
+		"name": "linkapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				},
+				"description": "List all orders"
+			},
+			"response": [
+				{
+					"name": "orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "364"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16c-coz8w+gZ4PHLEsRySLkCofWmf5w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Oct 2020 16:22:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"5f9c3da9f659f63e14b47fbe\",\n        \"dealId\": 4,\n        \"dealName\": \"Negócio org3\",\n        \"clientName\": \"pessoa 4\",\n        \"status\": \"won\",\n        \"date\": \"2020-10-30T14:04:55.000Z\",\n        \"value\": 50,\n        \"currency\": \"USD\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"5f9c3da9f659f63e14b47fbf\",\n        \"dealId\": 1,\n        \"dealName\": \"Negócio org1\",\n        \"clientName\": \"pessoa1\",\n        \"status\": \"won\",\n        \"date\": \"2020-10-30T14:04:32.000Z\",\n        \"value\": 10,\n        \"currency\": \"USD\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "aggregations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/aggregations",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"aggregations"
+					]
+				},
+				"description": "List all aggregations values of orders."
+			},
+			"response": [
+				{
+					"name": "aggregations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/aggregations",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aggregations"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5e-zv5ula+h0R3dJkc8A+mqcNGKp7o\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 30 Oct 2020 16:22:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"5f9c3da9f659f63e14b47fc0\",\n        \"date\": \"2020-10-30T16:22:01.206Z\",\n        \"valueTotal\": 60,\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
