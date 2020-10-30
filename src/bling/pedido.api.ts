@@ -1,19 +1,15 @@
 
+import { BadRequestException, HttpException } from '@nestjs/common/exceptions';
 import { HttpService, Injectable } from '@nestjs/common';
 import { PedidoResponse } from './interfaces/pedido-response.interface';
-import { OrderCreateDto } from 'src/order/dtos/order-create.dto';
 import { ConfigService } from '@nestjs/config';
-import convert from 'xml-js';
+import { ICreatePedido } from './interfaces/pedido-create.interface';
+import * as js2xmlparser from 'js2xmlparser';
 
 @Injectable()
 export class PedidoApi {
   private readonly token: string;
   private readonly uri: string;
-  private static readonly converterOptions = {
-    compact: true,
-    ignoreComment: true,
-    spaces: 0
-  };
 
   constructor(
     private httpService: HttpService,
@@ -23,15 +19,24 @@ export class PedidoApi {
     this.uri = configService.get('BLING_API_URI');
   }
 
-  async save(payload: OrderCreateDto): Promise<PedidoResponse> {
+  async create(request: ICreatePedido): Promise<PedidoResponse> {
     const url = `${this.uri}/pedido/json`;
-    const body = {
+    const xml = js2xmlparser.parse('pedido', request);
+    const options = {
       params: {
         apikey: this.token,
-        xml: convert.js2xml(payload, PedidoApi.converterOptions)
+        xml
       }
     };
-    const { data } = await this.httpService.post(url, body).toPromise();
+    const { status, data } = await this.httpService.post(url, null, options).toPromise();
+
+    if (status < 200 || status > 299) {
+      throw new HttpException('An unexpected error ocurred!', status);
+    }
+
+    if (data.retorno.erros && data.retorno.erros.length > 0) {
+      throw new BadRequestException(data.retorno.erros[0].erro.msg);
+    }
     return data;
   }
 }
