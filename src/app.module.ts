@@ -9,7 +9,7 @@ import { AppService } from './app.service';
     ConfigModule.forRoot({
       isGlobal: true
     }),
-    MongooseModule.forRoot(process.env.MONGO_URI)
+    SharedModule,
   ],
   controllers: [
     AppController
