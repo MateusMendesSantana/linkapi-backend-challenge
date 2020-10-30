@@ -1,3 +1,4 @@
+import { AggregationModule } from './aggregation/aggregation.module';
 import { ScheduleModule } from '@nestjs/schedule/dist/schedule.module';
 import { AppController } from './app.controller';
 import { SharedModule } from './shared/shared.module';
@@ -13,6 +14,7 @@ import { Module } from '@nestjs/common';
     }),
     SharedModule,
     OrderModule,
+    AggregationModule,
   ],
   controllers: [
     AppController
