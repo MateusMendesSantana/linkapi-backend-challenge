@@ -21,11 +21,15 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/bull": "^0.2.2",
     "@nestjs/common": "^7.0.0",
     "@nestjs/config": "^0.5.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/mongoose": "^7.0.2",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/schedule": "^0.4.1",
+    "@types/bull": "^3.14.4",
+    "bull": "^3.18.1",
     "js2xmlparser": "^4.0.1",
     "mongoose": "^5.10.11",
     "reflect-metadata": "^0.1.13",

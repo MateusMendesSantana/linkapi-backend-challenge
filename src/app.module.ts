@@ -5,6 +5,7 @@ import { SharedModule } from './shared/shared.module';
 import { ConfigModule } from '@nestjs/config';
 import { OrderModule } from './order/order.module';
 import { AppService } from './app.service';
+import { TaskModule } from './task/task.module';
 import { Module } from '@nestjs/common';
 
 @Module({
@@ -13,8 +14,10 @@ import { Module } from '@nestjs/common';
       isGlobal: true
     }),
     SharedModule,
+    ScheduleModule.forRoot(),
     OrderModule,
     AggregationModule,
+    TaskModule
   ],
   controllers: [
     AppController
