@@ -1,9 +1,9 @@
 import { OnQueueActive, OnQueueCompleted, Process, Processor } from '@nestjs/bull';
-import { AggregationService } from 'src/aggregation/aggregation.service';
-import { OrderDocument } from 'src/order/order.schema';
-import { OrderService } from 'src/order/order.service';
+import { AggregationService } from '../../aggregation/aggregation.service';
+import { OrderDocument } from '../../order/order.schema';
+import { OrderService } from '../../order/order.service';
 import { Logger } from '@nestjs/common';
-import { IDeal } from 'src/pipedrive/interfaces/deal.interface';
+import { IDeal } from '../../pipedrive/interfaces/deal.interface';
 import { Job } from 'bull';
 
 @Processor('aggregation-queue')

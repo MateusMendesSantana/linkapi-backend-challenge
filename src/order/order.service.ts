@@ -2,8 +2,8 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { Order, OrderDocument } from './order.schema';
 import { OrderStatus } from './enums/order.enum';
 import { InjectModel } from '@nestjs/mongoose';
-import { PedidoApi } from 'src/bling/pedido.api';
-import { IDeal } from 'src/pipedrive/interfaces/deal.interface';
+import { PedidoApi } from '../bling/pedido.api';
+import { IDeal } from '../pipedrive/interfaces/deal.interface';
 import { Model } from 'mongoose';
 
 @Injectable()

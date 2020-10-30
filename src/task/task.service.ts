@@ -1,12 +1,12 @@
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectQueue } from '@nestjs/bull';
-import { DealApi } from 'src/pipedrive/apis/deal.api';
+import { DealApi } from '../pipedrive/apis/deal.api';
 import { Queue } from 'bull';
 
 @Injectable()
-export class TasksService {
-  private readonly logger = new Logger(TasksService.name);
+export class TaskService {
+  private readonly logger = new Logger(TaskService.name);
 
   constructor(
     @InjectQueue('aggregation-queue')

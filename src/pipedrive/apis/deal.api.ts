@@ -4,7 +4,7 @@ import { IDealProductResponse } from '../interfaces/deal-product-response.interf
 import { IDealResponse } from '../interfaces/deal-response.interface';
 import { HttpException } from '@nestjs/common/exceptions';
 import { ConfigService } from '@nestjs/config';
-import { OrderStatus } from 'src/order/enums/order.enum';
+import { OrderStatus } from '../../order/enums/order.enum';
 import { IDeal } from '../interfaces/deal.interface';
 import { map } from 'rxjs/operators';
 

@@ -3,3 +3,4 @@
 /.serverless/
 /_warmup/
 dist
+coverage

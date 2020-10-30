@@ -1,5 +1,5 @@
 import { Aggregation, AggregationDocument } from './aggregation.schema';
-import { OrderDocument } from 'src/order/order.schema';
+import { OrderDocument } from '../order/order.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';

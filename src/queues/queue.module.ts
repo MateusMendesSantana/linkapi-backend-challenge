@@ -1,7 +1,7 @@
 
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { BullModule } from '@nestjs/bull';
 import { queueFactory } from './factories/queue.factory';
+import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 
 @Module({

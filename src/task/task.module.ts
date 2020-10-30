@@ -1,9 +1,9 @@
 import { AggregationConsumer } from './consumers/aggregation.consumer';
-import { AggregationModule } from 'src/aggregation/aggregation.module';
-import { PipeDriveModule } from 'src/pipedrive/pipedrive.module';
-import { TasksService } from './task.service';
-import { QueueModule } from 'src/queues/queue.module';
-import { OrderModule } from 'src/order/order.module';
+import { AggregationModule } from '../aggregation/aggregation.module';
+import { PipeDriveModule } from '../pipedrive/pipedrive.module';
+import { TaskService } from './task.service';
+import { QueueModule } from '../queues/queue.module';
+import { OrderModule } from '../order/order.module';
 import { Module } from '@nestjs/common';
 
 @Module({
@@ -14,11 +14,11 @@ import { Module } from '@nestjs/common';
     QueueModule
   ],
   providers: [
-    TasksService,
+    TaskService,
     AggregationConsumer
   ],
   exports: [
-    TasksService
+    TaskService
   ]
 })
 export class TaskModule { }

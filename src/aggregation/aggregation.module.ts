@@ -3,8 +3,8 @@ import { AggregationController } from './aggregation.controller';
 import { AggregationRepository } from './aggregation.repository';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AggregationService } from './aggregation.service';
-import { SharedModule } from 'src/shared/shared.module';
-import { BlingModule } from 'src/bling/bling.module';
+import { SharedModule } from '../shared/shared.module';
+import { BlingModule } from '../bling/bling.module';
 import { Module } from '@nestjs/common';
 
 @Module({
